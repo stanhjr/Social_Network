@@ -11,6 +11,8 @@ class SignUpSerializer(serializers.ModelSerializer):
         fields = ['username', 'password']
 
     def save(self, **kwargs):
+        if len(self.validated_data["password"]) < 8:
+            raise serializers.ValidationError({"password": "password must be at least 8 characters long"})
         self.validated_data["password"] = make_password(self.validated_data["password"])
         return super().save()
 
