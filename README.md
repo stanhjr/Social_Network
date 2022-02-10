@@ -4,6 +4,8 @@
 
 for local host  -> http://127.0.0.1:8000/swagger/
 
+**OS Ubuntu 20.04**
+
 # The project features:
 
 ● user signup
